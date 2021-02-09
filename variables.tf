@@ -68,7 +68,7 @@ variable "https_port" {
 
 variable "https_enabled" {
   type        = bool
-  default     = false
+  default     = true
   description = "A boolean flag to enable/disable HTTPS listener"
 }
 
@@ -302,5 +302,11 @@ variable "additional_certs" {
 variable "security_group_enabled" {
   type        = bool
   description = "Enables the security group"
-  default     = true
+  default     = false
+}
+
+variable "target_group_enabled" {
+  type        = bool
+  description = "Enables the target group"
+  default     = false
 }

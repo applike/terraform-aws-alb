@@ -64,7 +64,7 @@ resource "aws_lb" "default" {
 }
 
 resource "aws_lb_target_group" "default" {
-  count                = module.this.enabled ? 1 : 0
+  count                = module.this.enabled && var.target_group_enabled ? 1 : 0
   name                 = var.target_group_name == "" ? module.this.id : var.target_group_name
   port                 = var.target_group_port
   protocol             = var.target_group_protocol
