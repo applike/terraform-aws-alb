@@ -97,7 +97,7 @@ resource "aws_lb_target_group" "default" {
   }
 
   tags = merge(
-    module.default_target_group_label.tags,
+    module.this.tags,
     var.target_group_additional_tags
   )
 }
