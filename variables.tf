@@ -1,3 +1,7 @@
+variable "lb_name" {
+  type        = string
+  description = "The name of the LB. This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen"
+}
 variable "vpc_id" {
   type        = string
   description = "VPC ID to associate with ALB"
@@ -84,6 +88,12 @@ variable "https_ssl_policy" {
   type        = string
   description = "The name of the SSL Policy for the listener"
   default     = "ELBSecurityPolicy-2015-05"
+}
+
+variable "access_logs_bucket_id" {
+  type        = string
+  default     = ""
+  description = "The S3 bucket name to store the logs in"
 }
 
 variable "access_logs_prefix" {
