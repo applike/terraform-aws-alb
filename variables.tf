@@ -308,5 +308,5 @@ variable "security_group_enabled" {
 variable "target_group_enabled" {
   type        = bool
   description = "Enables the target group"
-  default     = false
+  default     = true
 }
