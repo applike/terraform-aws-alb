@@ -146,7 +146,7 @@ variable "deregistration_delay" {
 
 variable "health_check_path" {
   type        = string
-  default     = "/"
+  default     = "/health"
   description = "The destination for the health check request"
 }
 
@@ -158,7 +158,7 @@ variable "health_check_port" {
 
 variable "health_check_timeout" {
   type        = number
-  default     = 10
+  default     = 5
   description = "The amount of time to wait in seconds before failing a health check request"
 }
 
@@ -176,13 +176,13 @@ variable "health_check_unhealthy_threshold" {
 
 variable "health_check_interval" {
   type        = number
-  default     = 15
+  default     = 30
   description = "The duration in seconds in between health checks"
 }
 
 variable "health_check_matcher" {
   type        = string
-  default     = "200-399"
+  default     = "200"
   description = "The HTTP response codes to indicate a healthy check"
 }
 
@@ -212,7 +212,7 @@ variable "target_group_name" {
 
 variable "target_group_target_type" {
   type        = string
-  default     = "ip"
+  default     = "instance"
   description = "The type (`instance`, `ip` or `lambda`) of targets that can be registered with the target group"
 }
 
